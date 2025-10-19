@@ -15,8 +15,8 @@ export function Sidebar() {
     return (
         <div className="h-screen bg-gradient-to-b from-gray-50 to-white border-r border-gray-200 w-72 fixed left-0 top-0 flex flex-col">
             {/* Header */}
-            <div className="p-6 border-b border-gray-200">
-                <div className="flex text-2xl font-bold items-center">
+            <div className="p-4 sm:p-6 border-b border-gray-200">
+                <div className="flex text-xl sm:text-2xl font-bold items-center">
                     <div className="pr-2 text-purple-600">
                         <Logo />
                     </div>
@@ -24,12 +24,12 @@ export function Sidebar() {
                         Brainly
                     </span>
                 </div>
-                <p className="text-sm text-gray-500 mt-2">Your Digital Brain</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-2">Your Digital Brain</p>
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 px-4 py-6">
-                <div className="space-y-2">
+            <nav className="flex-1 px-3 sm:px-4 py-4 sm:py-6 overflow-y-auto">
+                <div className="space-y-1 sm:space-y-2">
                     <SidebarItem text="All Content" icon={<span>📁</span>} />
                     <SidebarItem text="Twitter" icon={<TwitterIcon />} />
                     <SidebarItem text="Youtube" icon={<YoutubeIcon />} />
@@ -38,8 +38,8 @@ export function Sidebar() {
                     <SidebarItem text="Notes" icon={<span>📝</span>} />
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                    <div className="space-y-2">
+                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
+                    <div className="space-y-1 sm:space-y-2">
                         <SidebarItem text="Favorites" icon={<span>⭐</span>} />
                         <SidebarItem text="Recently Added" icon={<span>🕒</span>} />
                         <SidebarItem text="Tags" icon={<span>🏷️</span>} />
@@ -48,20 +48,20 @@ export function Sidebar() {
             </nav>
 
             {/* User Section */}
-            <div className="p-4 border-t border-gray-200 bg-gray-50">
+            <div className="p-3 sm:p-4 border-t border-gray-200 bg-gray-50">
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                        <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                    <div className="flex items-center min-w-0 flex-1">
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm shrink-0">
                             U
                         </div>
-                        <div className="ml-3">
-                            <p className="text-sm font-medium text-gray-700">User</p>
+                        <div className="ml-2 sm:ml-3 min-w-0">
+                            <p className="text-sm font-medium text-gray-700 truncate">User</p>
                             <p className="text-xs text-gray-500">Free Plan</p>
                         </div>
                     </div>
                     <button
                         onClick={handleLogout}
-                        className="p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                        className="p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200 shrink-0"
                         title="Logout"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

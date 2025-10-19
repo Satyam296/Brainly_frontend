@@ -10,19 +10,19 @@ const Hero = () => {
 
     return (
         <div className="text-white relative overflow-hidden">
-            {/* Background Effects */}
+            
             <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-purple-900/20"></div>
             <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
             
             <div className="relative max-w-6xl w-full min-h-screen mx-auto text-center flex flex-col justify-center px-4 pt-32 pb-16">
-                {/* Badge */}
+                
                 <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-purple-800/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-purple-300 font-semibold text-sm mb-8 mx-auto animate-fade-in">
                     <span className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-ping"></span>
                     ALL YOUR CONTENT IN ONE PLACE
                 </div>
 
-                {/* Main Headline */}
+        
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent leading-tight">
                     Your Digital
                     <br />

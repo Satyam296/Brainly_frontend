@@ -86,11 +86,11 @@ export function CreateContentModal ({open, onClose} : CreateContentModalProps) {
     if (!open) return null;
 
     return (
-        <div onClick={handleOverlayClick} className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/50">        
-            <div ref={modalRef} className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div onClick={handleOverlayClick} className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/50 p-4">        
+            <div ref={modalRef} className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
                 {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                    <h2 className="text-xl font-semibold text-gray-900">Add New Content</h2>
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
+                    <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Add New Content</h2>
                     <button 
                         onClick={onClose} 
                         className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -100,7 +100,7 @@ export function CreateContentModal ({open, onClose} : CreateContentModalProps) {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 space-y-6">
+                <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
                     {/* Error Message */}
                     {error && (
                         <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
@@ -109,12 +109,12 @@ export function CreateContentModal ({open, onClose} : CreateContentModalProps) {
                     )}
 
                     {/* Form Fields */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
                             <Input 
                                 reference={titleRef} 
-                                classy="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+                                classy="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
                                 placeholder="Enter a descriptive title" 
                             />
                         </div>
@@ -125,7 +125,7 @@ export function CreateContentModal ({open, onClose} : CreateContentModalProps) {
                             </label>
                             <Input 
                                 reference={linkRef} 
-                                classy="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
+                                classy="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" 
                                 placeholder={type === ContentType.Notes ? "Write your notes here..." : "Paste the URL here"} 
                             />
                         </div>
@@ -133,20 +133,20 @@ export function CreateContentModal ({open, onClose} : CreateContentModalProps) {
 
                     {/* Content Type Selection */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-3">Content Type</label>
-                        <div className="grid grid-cols-2 gap-2">
+                        <label className="block text-sm font-medium text-gray-700 mb-2 sm:mb-3">Content Type</label>
+                        <div className="grid grid-cols-2 sm:grid-cols-2 gap-2">
                             {contentTypeOptions.map((option) => (
                                 <button
                                     key={option.type}
                                     onClick={() => setType(option.type)}
-                                    className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
+                                    className={`p-2 sm:p-3 rounded-lg border-2 text-xs sm:text-sm font-medium transition-all ${
                                         type === option.type
                                             ? 'border-purple-500 bg-purple-50 text-purple-700'
                                             : 'border-gray-200 bg-white text-gray-700 hover:bg-gray-50'
                                     }`}
                                 >
-                                    <div className="flex items-center justify-center space-x-2">
-                                        <span>{option.icon}</span>
+                                    <div className="flex items-center justify-center space-x-1 sm:space-x-2">
+                                        <span className="text-base sm:text-lg">{option.icon}</span>
                                         <span className="hidden sm:inline">{option.label.split(' ')[1]}</span>
                                     </div>
                                 </button>
